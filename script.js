@@ -49,8 +49,13 @@ function completeTask(taskId) {
         taskButton.disabled = true;
         taskButton.textContent = `Completed  `;
         taskButton.style.backgroundColor = "gray";
+
+        if (leftTasks === 0) {
+            alert("Congrats !!! You have completed all the current task ");
+        }
+
     } else {
-        alert("No tasks left! ");
+        alert("Congrats !!! You have completed all the current task ");
     }
 }
 
