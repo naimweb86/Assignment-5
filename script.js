@@ -11,3 +11,58 @@ function updateDateTime() {
 updateDateTime(); //
 setInterval(updateDateTime, 1000);
 
+// theme color chnage
+document.getElementById('theme-color').addEventListener('click', function () {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    document.body.style.backgroundColor = randomColor;
+})
+
+// Link to blogs page
+document.getElementById('discover').addEventListener('click', function () {
+    window.location.href = "faq.html";
+
+})
+
+// task buttons
+let totalTasks = 23;
+let leftTasks = 6;
+
+function completeTask(taskId) {
+    if (leftTasks > 0 && totalTasks > 0) {
+        leftTasks--;
+
+        document.getElementById("leftTasks").textContent = leftTasks;
+        document.getElementById("totalTasks").textContent = totalTasks;
+        totalTasks++
+        alert(`Board Update successfully! `);
+
+        let now = new Date();
+        let formattedDateTime = now.toLocaleString();
+
+        let commentList = document.getElementById("commentsList");
+        let newComment = document.createElement("li");
+        newComment.textContent = `You have completlet Task ${taskId} at: (${formattedDateTime})`;
+        commentList.appendChild(newComment);
+
+
+        let taskButton = document.getElementById(`task-${taskId}`);
+        taskButton.disabled = true;
+        taskButton.textContent = `Completed  `;
+        taskButton.style.backgroundColor = "gray";
+    } else {
+        alert("No tasks left! ");
+    }
+}
+
+for (let i = 1; i <= 6; i++) {
+    document.getElementById(`task-${i}`).addEventListener("click", function () {
+        completeTask(i);
+    });
+}
+
+// clear comments from section
+
+document.getElementById("clear-history").addEventListener("click", function () {
+    let commentList = document.getElementById("commentsList");
+    commentList.innerHTML = ""; // Clears all comments
+});

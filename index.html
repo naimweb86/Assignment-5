@@ -30,10 +30,10 @@
                     <div class="flex gap-2">
                         <div class="flex gap-2 items-center bg-[#f4f7ff] p-2 rounded-xl">
                             <img src="assets/checkbox.png" alt="">
-                            <p>24</p>
+                            <p><span id="totalTasks">23</span></p>
                         </div>
                         <div class="bg-[#f4f7ff] p-2 rounded-full">
-                            <img src="assets/theme-btn.png" alt="">
+                            <button id="theme-color"><img src="assets/theme-btn.png" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -52,18 +52,19 @@
                             <div class="flex gap-2  items-center justify-center ">
                                 <img class="p-2 bg-white rounded-full " src="assets/checkbox.png" alt="">
                                 <div>
-                                    <p class="text-lg font-medium">Task Manager</p>
-                                    <h2 class="text-3xl">05</h2>
+                                    <p class="text-lg font-medium">Task Assigned </p>
+                                    <h2 class="text-3xl"><span id="leftTasks">6</span></h2>
                                 </div>
                             </div>
                         </div>
                         <!-- card-2 -->
-                        <div
+                        <div id="discover"
                             class="col-span-2 bg-[#f4f7ff] hover:bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] hover:text-white  p-7 rounded-xl ">
                             <div class="flex gap-2  items-center justify-center ">
                                 <img class="p-2  " src="assets/board.png" alt="">
                                 <div>
-                                    <p class="text-2xl font-medium">Discover Something <br> New Today!</p>
+                                    <p class="text-2xl font-medium"><a href="">Discover Something <br> New Today!</a>
+                                    </p>
 
                                 </div>
                             </div>
@@ -82,14 +83,13 @@
 
 
                     </div>
-
                     <!-- talks -->
 
-                    <div class="bg-white container mx-auto p-6 ">
+                    <div class="bg-white container mx-auto p-6 rounded-b-lg ">
 
                         <div class="grid grid-cols-3  p-5 gap-6">
                             <!-- start -->
-                            <div class="bg-[#f4f7ff] space-y-2 p-6 rounded-lg">
+                            <div id="Fix-Mobile-Button-Issue" class="bg-[#f4f7ff] space-y-2 p-6 rounded-lg">
                                 <h4 class="text-lg bg-white rounded-lg p-2 inline ">ShopEase</h4>
                                 <h1 class="text-2xl font-medium mt-2 ">Fix Mobile Button Issue </h1>
                                 <p class="text-lg p-2 rounded-lg bg-white block">Debug using Chrome <br>DevTools, check
@@ -103,7 +103,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-1" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -124,7 +124,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-2" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -145,7 +145,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-3" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -166,7 +166,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-4" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -187,7 +187,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-5" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -208,7 +208,7 @@
                                         <h6>21 March 2025</h6>
                                     </div>
                                     <div>
-                                        <button class="btn bg-[#3752FD] text-white">Completed</button>
+                                        <button id="task-6" class="btn bg-[#3752FD] text-white">Completed</button>
                                     </div>
                                 </div>
 
@@ -219,10 +219,23 @@
                         </div>
                     </div>
 
-
+                    <!-- asode -->
                 </div>
                 <div class="bg-white col-span-1  rounded-xl p-6">
-                    <h1>hi</h1>
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="flex gap-3">
+                            <img src="assets/activity.png" alt="">
+                            <h4>Activity Log</h4>
+                        </div>
+                        <div>
+                            <button id="clear-history" class="btn bg-[#3752FD] text-white">Clear History</button>
+                        </div>
+
+
+                        <div>
+                            <ul id="commentsList" class="bg-[#f4f7ff] p-2 rounded-xl mb-4 "></ul>
+                        </div>
+                    </div>
                 </div>
                 <!-- task -->
 
@@ -237,7 +250,106 @@
     </main>
 
 
+    <script>
 
+
+    </script>
+
+
+    <!-- <script>
+        let totalTasks = 23; // Initial total tasks
+        let leftTasks = 6; // Initial left tasks
+
+        function completeTask() {
+            if (leftTasks > 0 && totalTasks > 0) {
+                leftTasks--; // Decrease left task count
+                document.getElementById("leftTasks").textContent = leftTasks;
+                document.getElementById("totalTasks").textContent = totalTasks;
+                alert(`Board ${taskId}  Update successfully`);
+
+                // Add comment to the section
+                let historyList = document.getElementById("historyList");
+                let newHistory = document.createElement("li");
+                newHistory.textContent = "You have completed the task fix mobile button issue";
+                historyList.appendChild(newHistory);
+
+                // Disable button after completion
+                let taskButton = document.getElementById(`task-${taskId}`);
+                taskButton.disabled = true;
+                taskButton.textContent = `Completed Task ${taskId}`
+                taskButton.style.backgroundColor = "gray";
+                // document.getElementById("task-1").disabled = true;
+                // document.getElementById("task-1").textContent = "Completed";
+                // document.getElementById("task-1").style.backgroundColor = "gray";
+            } else {
+                alert("Congratulation");
+            }
+        }
+        // taskButton.style.backgroundColor = "gray";
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById(`task-${i}`).addEventListener("click", function () {
+                completeTask(i);
+            });
+        }
+        // document.getElementById("task-1").addEventListener("click", completeTask);
+
+
+
+        // let totalTasks = 23; // Initial total tasks
+        // let leftTasks = 6; // Initial left tasks
+
+        // function completeTask() {
+        //     if (leftTasks > 0) {
+        //         leftTasks--; // Decrease left task count
+        //         document.getElementById("leftTasks").textContent = leftTasks;
+        //         document.getElementById("totalTasks").textContent = totalTasks;
+        //         alert("Board Update successfully");
+
+        //         // Add comment to the section
+        //         let historyList = document.getElementById("historyList");
+        //         let newHistory = document.createElement("li");
+        //         newHistory.textContent = "You have completed the task fix mobile button issue";
+        //         historyList.appendChild(newHistory);
+
+        //         // Disable button after completion
+        //         document.getElementById("task-1").disabled = true;
+        //         document.getElementById("task-1").textContent = "Completed";
+        //         document.getElementById("task-1").style.backgroundColor = "gray";
+        //     } else {
+        //         alert("Congratulation");
+        //     }
+        // }
+
+        // document.getElementById("task-1").addEventListener("click", completeTask);
+
+
+        // two
+
+
+        // function completeTask() {
+        //     if (leftTasks > 0) {
+        //         leftTasks--; // Decrease left task count
+        //         document.getElementById("leftTasks").textContent = leftTasks;
+        //         document.getElementById("totalTasks").textContent = totalTasks;
+        //         alert("Board Update successfully");
+
+        //         // Add comment to the section
+        //         let historyList = document.getElementById("historyList");
+        //         let newHistory = document.createElement("li");
+        //         newHistory.textContent = "You have completed the task fix mobile button issue";
+        //         historyList.appendChild(newHistory);
+
+        //         // Disable button after completion
+        //         document.getElementById("task-2").disabled = true;
+        //         document.getElementById("task-2").textContent = "Completed";
+        //         document.getElementById("task-2").style.backgroundColor = "gray";
+        //     } else {
+        //         alert("Congratulation");
+        //     }
+        // }
+
+        //     document.getElementById("task-2").addEventListener("click", completeTask);
+        // </script> -->
 
 
     <script src="script.js"></script>

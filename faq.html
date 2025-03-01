@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <style>
+        body {
+            background-color: #f4f7ff;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,29 +28,55 @@
                 </div>
                 <div class="flex-none">
                     <div class="flex gap-2">
-                        <div class="flex gap-2 items-center bg-[#f4f7ff] p-2 rounded-xl">
-                            <img src="assets/checkbox.png" alt="">
-                            <p>24</p>
-                        </div>
-                        <div class="bg-[#f4f7ff] p-2 rounded-full">
-                            <a href="#"> <img src="assets/theme-btn.png" alt=""></a>
-                        </div>
+                        <button class="btn bg-[#3752FD] text-white"><a href="index.html">Back to Desk</a></button>
                     </div>
                 </div>
             </div>
         </section>
     </header>
 
-    <main>
+    <main class="container mx-auto pb-16">
         <section>
-            <div class="bg-slate-500">
-                <h1>hello</h1>
+            <h1 class="text-3xl font-medium mt-2 mb-2 text-center">Blogs</h1>
+            <div class="collapse bg-base-100 border border-base-300 mb-2">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title font-semibold"> What are the different ways to select an element in the DOM?
+                </div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
             </div>
-            <div class="bg-red-300gr">
-
+            <div class="collapse bg-base-100 border border-base-300 mb-2">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title font-semibold"> What is the difference between innerHTML, innerText, and
+                    textContent ?
+                </div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
+            </div>
+            <div class="collapse bg-base-100 border border-base-300 mb-2">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title font-semibold"> What is event delegation in the DOM?
+                </div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
+            </div>
+            <div class="collapse bg-base-100 border border-base-300 mb-2">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title font-semibold"> What is event bubbling in the DOM?
+                </div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
+            </div>
+            <div class="collapse bg-base-100 border border-base-300 mb-2">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title font-semibold"> How do you create, add, and remove elements using JavaScript?
+                </div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the
+                    registration process.</div>
             </div>
         </section>
     </main>
+
 
 
 
