@@ -30,10 +30,9 @@ let leftTasks = 6;
 function completeTask(taskId) {
     if (leftTasks > 0 && totalTasks > 0) {
         leftTasks--;
-
         document.getElementById("leftTasks").textContent = leftTasks;
         document.getElementById("totalTasks").textContent = totalTasks;
-        totalTasks++
+        totalTasks++;
         alert(`Board Update successfully! `);
 
         let now = new Date();
